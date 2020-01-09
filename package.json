@@ -4,5 +4,8 @@
   "description": "converting a simple website to an electron app",
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
-  "repository": "git@github.com:dennybiasiolli/electron_sample_2020.git"
+  "repository": "git@github.com:dennybiasiolli/electron_sample_2020.git",
+  "devDependencies": {
+    "electron": "^7.1.8"
+  }
 }
