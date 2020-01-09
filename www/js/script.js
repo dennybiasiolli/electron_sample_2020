@@ -30,4 +30,14 @@ if (require) {
   btnIpcAsync.onclick = () => {
     ipcRenderer.send('asynchronous-message', 'ping async')
   }
+
+  ipcRenderer.on('test-progress-bar-reply', () => {
+    new Notification('Progress completed', {
+      body: 'All progress are completed'
+    })
+  })
+  const btnIpcProgress = document.getElementById('btnIpcProgress');
+  btnIpcProgress.onclick = () => {
+    ipcRenderer.send('test-progress-bar')
+  }
 }
