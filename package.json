@@ -1,0 +1,8 @@
+{
+  "name": "electron_sample_2020",
+  "version": "0.1.0",
+  "description": "converting a simple website to an electron app",
+  "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
+  "license": "MIT",
+  "repository": "git@github.com:dennybiasiolli/electron_sample_2020.git"
+}
