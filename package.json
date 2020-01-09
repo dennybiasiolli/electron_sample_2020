@@ -5,6 +5,10 @@
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
   "repository": "git@github.com:dennybiasiolli/electron_sample_2020.git",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
   "devDependencies": {
     "electron": "^7.1.8"
   }
