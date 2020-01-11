@@ -1,0 +1,15 @@
+appId: electron.sample.2020
+
+files:
+    - electron/**/*
+    - www/**/*
+
+mac:
+    category: public.app-category.utilities
+    icon: icons/icon.png
+
+win:
+    icon: icons/icon.png
+
+linux:
+    icon: icons/icon.png
