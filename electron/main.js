@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const { autoUpdater } = require('electron-updater')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -53,6 +54,43 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+function sendStatusToWindow(text, timeout = 20000) {
+  win.webContents.send('update-message', {
+    body: text,
+    timeout,
+  })
+}
+autoUpdater.on('checking-for-update', () => {
+  sendStatusToWindow('Checking for update...')
+})
+autoUpdater.on('update-available', (info) => {
+  sendStatusToWindow('Update available.')
+})
+autoUpdater.on('update-not-available', (info) => {
+  sendStatusToWindow('Update not available.')
+})
+autoUpdater.on('error', (err) => {
+  win.webContents.send('asynchronous-reply', err)
+  console.log('err')
+  sendStatusToWindow('Error in auto-updater. ' + err)
+})
+autoUpdater.on('download-progress', (progressObj) => {
+  let log_message = "Download speed: " + progressObj.bytesPerSecond
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%'
+  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')'
+  sendStatusToWindow(log_message)
+})
+autoUpdater.on('update-downloaded', (info) => {
+  sendStatusToWindow('Update downloaded')
+})
+
+// autoUpdate simple example
+app.on('ready', () => {
+  setTimeout(() => {
+    autoUpdater.checkForUpdatesAndNotify()
+  }, 1000)
+})
 
 ipcMain.on('synchronous-message', (event, arg) => {
   console.log(arg)
