@@ -4,6 +4,10 @@ files:
     - electron/**/*
     - www/**/*
 
+publish:
+    provider: generic
+    url: https://www.dennybiasiolli.com/electron_sample_2020/updates/
+
 mac:
     category: public.app-category.utilities
     icon: icons/icon.png
