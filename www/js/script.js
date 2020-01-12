@@ -18,6 +18,15 @@ btnNotification.onclick = () => {
 if (require) {
   const { ipcRenderer } = require('electron')
 
+  ipcRenderer.on('update-message', function (event, { body, timeout }) {
+    const notification = new Notification('AutoUpdate', {
+      body
+    })
+    setTimeout(() => {
+      notification.close()
+    }, timeout)
+  })
+
   const btnIpcSync = document.getElementById('btnIpcSync');
   btnIpcSync.onclick = () => {
     console.log(ipcRenderer.sendSync('synchronous-message', 'ping sync'))
