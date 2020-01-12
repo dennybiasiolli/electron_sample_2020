@@ -44,7 +44,7 @@ Install dependency with `npm install`
 
 ## launch electron
 
-```
+```sh
 npm run start
 ```
 
@@ -53,7 +53,7 @@ npm run start
 
 Running electron from Linux can display the following error:
 
-```
+```sh
 [24429:0111/231418.511876:FATAL:setuid_sandbox_host.cc(157)] The SUID sandbox
 helper binary was found, but is not configured correctly.
 Rather than run without sandboxing I'm aborting now.
@@ -65,3 +65,21 @@ is owned by root and has mode 4755.
 A possible workaround can be this command:
 
 `sudo sysctl kernel.unprivileged_userns_clone=1`
+
+
+## Issue 2
+
+Running on macOS with Parallels installed can display the following error:
+
+```sh
+(node:86432) UnhandledPromiseRejectionWarning: Error: Please ensure that you
+are logged in "Windows 10" parallels virtual machine.
+In the future please do not stop VM, but suspend.
+```
+
+A possible workaround can be configuring target for win in electron builder file:
+
+```yaml
+win:
+    target: nsis
+```
