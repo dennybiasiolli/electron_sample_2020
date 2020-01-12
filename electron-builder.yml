@@ -11,9 +11,12 @@ publish:
 mac:
     category: public.app-category.utilities
     icon: icons/icon.png
+    target: dmg
 
 win:
     icon: icons/icon.png
+    target: nsis
 
 linux:
     icon: icons/icon.png
+    target: AppImage
