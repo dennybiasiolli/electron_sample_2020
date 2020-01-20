@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, shell } = require('electron')
 const { autoUpdater } = require('electron-updater')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -54,6 +54,14 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// open new-window externally
+app.on('ready', () => {
+  win.webContents.on('new-window', (e, url) => {
+    e.preventDefault()
+    shell.openExternal(url)
+  })
+})
 
 function sendStatusToWindow(text, timeout = 20000) {
   win.webContents.send('update-message', {
