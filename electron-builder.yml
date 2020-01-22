@@ -13,7 +13,7 @@ publish:
 
 mac:
     category: public.app-category.utilities
-    target: dmg
+    target: [dmg, zip]
 
 win:
     target: nsis
