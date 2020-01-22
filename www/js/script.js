@@ -6,7 +6,7 @@ setTimeout(function () {
 // notifications
 const btnNotification = document.getElementById('btnNotification');
 btnNotification.onclick = () => {
-  let myNotification = new Notification('Title', {
+  const myNotification = new Notification('Title', {
     body: 'Lorem Ipsum Dolor Sit Amet'
   })
   myNotification.onclick = () => {

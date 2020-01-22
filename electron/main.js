@@ -79,8 +79,6 @@ autoUpdater.on('update-not-available', (info) => {
   sendStatusToWindow('Update not available.')
 })
 autoUpdater.on('error', (err) => {
-  win.webContents.send('asynchronous-reply', err)
-  console.log('err')
   sendStatusToWindow('Error in auto-updater. ' + err)
 })
 autoUpdater.on('download-progress', (progressObj) => {
