@@ -32,7 +32,7 @@ export PATH=$PATH:/opt/wine-stable/bin
 wine --version
 ```
 
-Install reccomended packages on Linux:
+Install recommended packages on Linux:
 
 ```sh
 sudo apt-get install --no-install-recommends -y libopenjp2-tools
