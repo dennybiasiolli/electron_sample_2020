@@ -16,6 +16,6 @@
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
-    "electron-updater": "^4.2.0"
+    "electron-updater": "^4.3.5"
   }
 }
