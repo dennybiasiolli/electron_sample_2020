@@ -1,6 +1,6 @@
 {
   "name": "electron_sample_2020",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "converting a simple website to an electron app",
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
@@ -12,10 +12,10 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^7.1.8",
-    "electron-builder": "^21.2.0"
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1"
   },
   "dependencies": {
-    "electron-updater": "^4.2.0"
+    "electron-updater": "^4.3.5"
   }
 }
